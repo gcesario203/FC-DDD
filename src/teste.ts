@@ -1,1 +1,0 @@
-export const teste = (name: string) : string => `Ola ${name}`;
