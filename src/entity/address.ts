@@ -1,8 +1,8 @@
 export default class Address {
-    _street: string;
-    _zip: string;
-    _city: string;
-    _number: number;
+     _street: string;
+     _zip: string;
+     _city: string;
+     _number: number;
 
     constructor(street: string, zip: string, city: string, number: number) {
         this._street = street;
@@ -27,7 +27,7 @@ export default class Address {
             throw Error('Required Field')
     }
 
-    private isNullOrEmpty(property: string): boolean {
+     isNullOrEmpty(property: string): boolean {
         return !!!property || property.length === 0;
     }
 
