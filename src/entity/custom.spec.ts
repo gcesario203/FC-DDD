@@ -1,7 +1,7 @@
 import Address from "./address";
 import Customer from "./customer";
 
-describe("Cusstomer unit tests", () => {
+describe("Customer unit tests", () => {
     it("it should throw error when id is empty", () => {
 
         expect(() => {
