@@ -16,6 +16,21 @@ export default class Address {
         this.validate();
     }
 
+    get street(): string {
+        return this._street;
+    }
+
+    get zipCode(): string {
+        return this._zip;
+    }
+    get city(): string {
+        return this._city;
+    }
+
+    get number(): number {
+        return this._number;
+    }
+
     validate() {
         if (this.isNullOrEmpty(this._city))
             throw Error('Required Field')

@@ -1,6 +1,6 @@
-import Product from "../../domain/entity/product";
-import IProductRepository from "../../domain/repository/product.repository.interface";
-import ProductModel from "../db/sequelize/model/product.model";
+import Product from "../../../domain/entity/product";
+import IProductRepository from "../../../domain/repository/product.repository.interface";
+import ProductModel from "../../db/sequelize/model/product.model";
 
 export default class ProductRepository implements IProductRepository {
     async create(entity: Product): Promise<void> {
@@ -27,6 +27,9 @@ export default class ProductRepository implements IProductRepository {
 
     async find(id: string): Promise<Product> {
         const productModel = await ProductModel.findOne({ where: { id: id } });
+
+        if(!!!productModel)
+            throw new Error("Product not found")
 
         return new Product(productModel.id, productModel.name, productModel.price);
     };
