@@ -46,4 +46,13 @@ export default class Order {
     total(): number {
         return this._items.reduce((acc, item) => acc + item.getOrderItemTotalValue(), 0);
     }
+
+    addOrderItem(orderItem : OrderItem) : void {
+        const existingOrderItem = this._items.find(savedOrderItem => savedOrderItem.id === orderItem.id);
+
+        if(!!existingOrderItem)
+            return;
+
+        this._items.push(orderItem);
+    }
 }
