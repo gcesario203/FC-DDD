@@ -211,9 +211,9 @@ describe('Order repository unit tests', () => {
 
         await orderRepository.update(order);
 
-        const updatedOrderModel = await OrderModel.findOne({ where: { id: order.id }, include: ["items"] });
-
-        expect(updatedOrderModel.toJSON()).toStrictEqual({
+        const updatedOrderFromDb = await OrderModel.findOne({ where: { id: order.id }, include: ["items"] });
+        
+        expect(updatedOrderFromDb.toJSON()).toStrictEqual({
             id: order.id,
             customer_id: order.customerId,
             total: order.total(),
@@ -229,5 +229,6 @@ describe('Order repository unit tests', () => {
             })
         });
 
+        expect(updatedOrderFromDb.total).toBe(order.total());
     })
 })

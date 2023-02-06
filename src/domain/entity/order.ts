@@ -54,5 +54,7 @@ export default class Order {
             return;
 
         this._items.push(orderItem);
+
+        this._total = this.total();
     }
 }
