@@ -3,7 +3,7 @@ import EventInterface from "./event.interface";
 
 export default interface EventDispatcherInterface
 {
-    notifY(event: EventInterface) : void;
+    notify(event: EventInterface) : void;
 
     register(eventName: string, event: EventHandlerInterface) : void;
 
