@@ -21,10 +21,16 @@ export default class EventDispatcher implements EventDispatcherInterface {
     }
 
     register(eventName: string, event: EventHandlerInterface): void {
-        if (!!this.getEventHandlers[eventName] && this.getEventHandlers[eventName].length >= 0)
-            return;
+        if (!this.getEventHandlers[eventName]) {
+            this.eventHandlers[eventName] = [];
 
-        this.eventHandlers[eventName] = [];
+            this.eventHandlers[eventName].push(event);
+
+            return;
+        }
+
+        if (this.eventHandlers[eventName].includes(event))
+            return;
 
         this.eventHandlers[eventName].push(event);
     }

@@ -38,7 +38,7 @@ describe('Order repository unit tests', () => {
 
         const customer = new Customer("1", "Alberto Cesar");
 
-        customer.Address = new Address("Rua dos Mauricio de Nassau", "13134", "SP", 123);
+        customer.changeAddress(new Address("Rua dos Mauricio de Nassau", "13134", "SP", 123)) ;
 
         await customerRepository.create(customer);
 
@@ -80,7 +80,7 @@ describe('Order repository unit tests', () => {
 
         const customer = new Customer("1", "Alberto Cesar");
 
-        customer.Address = new Address("Rua dos Mauricio de Nassau", "13134", "SP", 123);
+        customer.changeAddress(new Address("rua dos bobos", "364447", "Americana", 12) );
 
         await customerRepository.create(customer);
 
@@ -124,7 +124,7 @@ describe('Order repository unit tests', () => {
 
         const customer = new Customer("1", "Alberto Cesar");
 
-        customer.Address = new Address("Rua dos Mauricio de Nassau", "13134", "SP", 123);
+        customer.changeAddress(new Address("Rua dos Mauricio de Nassau", "13134", "SP", 123)) ;
 
         await customerRepository.create(customer);
 
@@ -160,7 +160,7 @@ describe('Order repository unit tests', () => {
 
         const customer = new Customer("1", "Alberto Cesar");
 
-        customer.Address = new Address("Rua dos Mauricio de Nassau", "13134", "SP", 123);
+        customer.changeAddress(new Address("Rua dos Mauricio de Nassau", "13134", "SP", 123)) ;
 
         await customerRepository.create(customer);
 

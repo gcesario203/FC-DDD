@@ -46,7 +46,7 @@ export default class CustomerRepository implements ICustomerRepository {
         let customerToReturn = new Customer(customerFromDb.id, customerFromDb.name);
 
         customerToReturn.addRewardPoints(customerFromDb.rewardPoints);
-        customerToReturn.Address = new Address(customerFromDb.street, customerFromDb.zipCode, customerFromDb.city, customerFromDb.number);
+        customerToReturn.changeAddress( new Address(customerFromDb.street, customerFromDb.zipCode, customerFromDb.city, customerFromDb.number));
         customerToReturn.active = customerFromDb.active;
 
         return customerToReturn;
@@ -59,7 +59,7 @@ export default class CustomerRepository implements ICustomerRepository {
             let customerToReturn = new Customer(customerFromDb.id, customerFromDb.name);
 
             customerToReturn.addRewardPoints(customerFromDb.rewardPoints);
-            customerToReturn.Address = new Address(customerFromDb.street, customerFromDb.zipCode, customerFromDb.city, customerFromDb.number);
+            customerToReturn.changeAddress(new Address(customerFromDb.street, customerFromDb.zipCode, customerFromDb.city, customerFromDb.number));
             customerToReturn.active = customerFromDb.active;
 
             return customerToReturn;

@@ -30,7 +30,7 @@ describe('Customer repository unit tests', () => {
 
         const customer = new Customer("1", "Teste");
 
-        customer.Address = new Address("rua dos bobos", "364447", "Americana", 12);
+        customer.changeAddress(new Address("rua dos bobos", "364447", "Americana", 12));
 
         await CustomerRepo.create(customer);
 
@@ -43,7 +43,7 @@ describe('Customer repository unit tests', () => {
         const CustomerRepo = new CustomerRepository();
         const customer = new Customer("1", "Teste");
 
-        customer.Address = new Address("rua dos bobos", "364447", "Americana", 12);
+        customer.changeAddress(new Address("rua dos bobos", "364447", "Americana", 12));
 
         await CustomerRepo.create(customer);
 
@@ -63,7 +63,7 @@ describe('Customer repository unit tests', () => {
     it("should find a Customer by id", async () => {
         const CustomerRepo = new CustomerRepository();
         const customer = new Customer("1", "Teste");
-        customer.Address = new Address("rua dos bobos", "364447", "Americana", 12);
+        customer.changeAddress(new Address("rua dos bobos", "364447", "Americana", 12));
 
         await CustomerRepo.create(customer);
 
@@ -77,7 +77,7 @@ describe('Customer repository unit tests', () => {
     it('should find all Customers', async () => {
         const CustomerRepo = new CustomerRepository();
         const customer = new Customer("1", "Teste");
-        customer.Address = new Address("rua dos bobos", "364447", "Americana", 12);
+        customer.changeAddress(new Address("rua dos bobos", "364447", "Americana", 12));
 
         await CustomerRepo.create(customer);
 
